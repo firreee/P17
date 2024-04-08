@@ -31,7 +31,10 @@ def game_info():
     print()
 
 def main():
-    while True:
+    game_info()
+    running = True
+    
+    while running:
         print("1. Powerball")
         print("2. Mega Million")
         print("3. Lucky Day Lotto")
@@ -54,12 +57,13 @@ def main():
             numbers = generate_lotto()
         elif selection == '9':
             print("--- Program Quit ---")
-            break
+            running = False
         else:
             print("Invalid selection. Please choose a number from 1 to 4 or 9 to quit.")
             continue
 
-        print(f"{lottery_name}: {', '.join(map(str, numbers))}")
-        input("Hit enter key to return to menu\n")
-game_info()
-main()
+        if running:
+            print(f"{lottery_name}: {', '.join(map(str, numbers))}")
+            input("Hit enter key to return to menu\n")
+            main()
+
