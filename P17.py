@@ -62,8 +62,8 @@ def main():
             print("Invalid selection. Please choose a number from 1 to 4 or 9 to quit.")
             continue
 
-        if running:
-            print(f"{lottery_name}: {', '.join(map(str, numbers))}")
-            input("Hit enter key to return to menu\n")
-            main()
+        print(f"{lottery_name}: {', '.join(map(str, numbers))}")
+        run_again = input("Do you want to run again? (y/n): ")
 
+if __name__ == "__main__":
+    main()
