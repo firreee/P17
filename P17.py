@@ -1,7 +1,7 @@
 import random
 
 def generate_powerball():
-    numbers = random.sample(range(1, 70), 5)
+    numbers = random.sample(range(1, 70), 4)
     powerball = random.randint(1, 27)
     numbers.append(powerball)
     numbers.sort()
